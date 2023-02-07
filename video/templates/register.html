@@ -1,0 +1,75 @@
+{% extends 'home.html' %}
+{% load static %}
+
+
+{% block mymessage %}
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<div class="ya">
+    <br/>
+    <br/>
+    
+<div class="card" style="width: 30rem; margin: 0 auto;background-color:#2874A6 ">
+    <div class="card-body">
+        <h2 class="card-title text-center" style="color:white">Register</h2>
+        <br/>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="form-row">
+                <div class="form-group col-md-12" style="color:white">
+                    <label><strong>{{ form.username.label_tag }}</strong></label>
+                    {{ form.username }}
+                    {% for error in form.username.errors %}
+            <div class="text-danger">{{ error }}</div>
+            {% endfor %}
+            </div>
+                </div>
+                <div class="form-group col-md-12" style="color:white">
+                    <label><strong>{{ form.email.label_tag }}</strong></label>
+                    {{ form.email }}
+                    {% for error in form.email.errors %}
+            <div class="text-danger">{{ error }}</div>
+        {% endfor %}
+                </div>
+                <div class="form-group col-md-12" style="color:white">
+                    <label><strong>{{ form.password1.label_tag }}</strong></label>
+                    {{ form.password1 }}
+                    {% for error in form.password1.errors %}
+            <div class="text-danger">{{ error }}</div>
+        {% endfor %}
+                </div>
+                <div class="form-group col-md-12" style="color:white">
+                    <label><strong>{{ form.password2.label_tag }}</strong></label>
+                    {{ form.password2 }}
+                    {% for error in form.password2.errors %}
+            <div class="text-danger">{{ error }}</div>
+        {% endfor %}
+                </div>
+                <div class="form-group col-md-12" style="color:white">
+                    <label><strong>{{ profile_form.bio.label_tag }}</strong></label>
+                    {{ profile_form.bio }}
+                </div>
+                <div class="form-group col-md-12" style="color:white">
+               
+                    <label><strong>{{ profile_form.location.label_tag }}</strong></label>
+                    {{ profile_form.location }}
+                </div>
+               
+
+            <div class="form-group col-md-12" style="color:white">
+                <label><strong>{{ profile_form.profile_pic.label_tag }}</strong></label>
+                {{ profile_form.profile_pic}}
+            </div>
+            <button type="submit" class="btn btn-dark btn-block" >Register</button>
+        </form>
+    </div>
+</div>
+</div>
+<style>
+    .ya{
+        background-color:black
+    }
+
+</style>
+{% endblock %}

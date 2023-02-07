@@ -1,0 +1,406 @@
+
+{%extends 'home.html'%}
+{% load static %}
+{% block mymessage %}
+
+{% if user.is_authenticated %}
+<div class="box"><strong>Hello! {{user.username}} 👋 <strong></div>
+{% else %}
+
+{% endif %}
+<div class="header">
+<br>
+<br>
+
+<br/>
+
+<br/>
+
+
+
+</div>
+
+<br/>
+<br/>
+<div class="box12">Get In Touch </div>
+
+<div class="sm">
+    
+    <br/>
+    <br/>
+
+    <a href="https://wtsi.me/918639450592"><img style="float:left;margin-left:40px;margin-top:15px" src="{% static 'img/WhatsApp.svg.png' %}"  width="70" height="70"></a>
+    <a href=""><img style="float:left;margin-left:10px;" src="{% static 'img/Logo.wine.png' %}"  width="140" height="95"></a>
+    <a href=""><img style="float:left;margin-left:10px;margin-top:15px" src="{% static 'img/twitter-logo.png' %}"  width="80" height="80"></a>
+
+    </div>
+<br/>
+<br/>
+
+
+  
+    
+
+
+        
+
+
+
+
+
+
+  
+
+<footer>
+    <div class="footer-content">
+
+        <h3>Footer Example</h3>
+  
+<p>"This site is for entertainment purposes only."</p>  
+        <ul class="socials">
+  
+          <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+  
+          <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+  
+          <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+  
+          <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+  
+          <li><a href="#"><i class="fa fa-linkedin-square"></i></a></li>
+  
+        </ul>
+  
+      </div>
+  
+      <div class="footer-bottom">
+  
+        <p>Copyright &copy </p>
+  
+        
+  
+      </div>
+  
+    </footer>
+
+
+<style>
+    .scrolling-container {
+        overflow: hidden;
+        white-space: nowrap;
+      }
+      
+      .scrolling-container .user-profile {
+        display: inline-block;
+      }
+body{
+   
+    height:auto;
+}
+.header{
+    width:100%;
+    height:600px;
+    color:black;
+    background-image:url("{% static "img/ffa57168beebf412c02f4efe43280846.jpg" %}");
+    overflow-x: hidden;
+    background-repeat:no-repeat;
+    background-size: 500px 700px;
+ 
+}
+.sm{
+    width:100%;
+    height:800px;
+
+
+    margin-inline:auto;
+    
+}
+.navbar-nav sm-icons{
+    display:inline;
+}
+.fa fa-twitter{
+    width:40px;
+    height:50px;
+}
+a{
+    text-decoration:none;
+}
+.box1{
+    width:220px;
+    height:150px;
+    background-color:#005993;
+    padding-left:20px;
+    padding-top:30px;
+    margin-top:20px;
+    margin-left:50px;
+    font-size:50px;
+    color:white;
+}
+.box2{
+    width:280px;
+    height:150px;
+    background-color:#5DADE2;
+    padding-left:20px;
+    padding-top:30px;
+    margin-top:20px;
+    margin-left:150px;
+}
+.box3{
+    width:280px;
+    height:180px;
+    background-color:#5DADE2;
+    padding-left:20px;
+    padding-top:30px;
+    margin-top:20px;
+    margin-left:60px;
+}
+
+.footer{
+    width:100%;
+    height:200px;
+    background-color:black;
+}
+.fa fa-telegram fa-fw{
+    height:80px;
+    width:80px;
+
+
+}
+  
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .img-slider {
+      position: relative;
+      width: 100vw;
+      height: 400px;
+  }
+  .img-slider .slider-container {
+      position: absolute;
+      width: 300%;
+      top: 0;
+      left: 0;
+      overflow: hidden;
+      animation: slider 26s infinite;
+  }
+  .img-slider .slider-container .slide {
+      position: relative;
+      width: 33.33333333%;
+      height: 100%;
+      float: left;
+      overflow: hidden
+  }
+  .img-slider .slider-container .slide img {
+    display: block;
+    width: 100%;
+    height: 100%
+  }
+  @keyframes slider {
+      0%, 25%, 100%{left: 0}
+      
+      30%, 55%{left: -100%}
+      
+      60%, 85%{left: -200%}
+  }
+  .box12 {
+    width: 100%;
+    height: 100px;
+    background-color:#2874A6;
+    animation: animate 3s;
+    color:white;
+    font-size: 35px;
+  }
+  
+  @keyframes animate {
+    0% {
+    transform: translateX(-100%);
+    }
+    50% {
+    transform: translateX(0);
+    }
+    100% {
+    transform: translateX(0);
+    }
+    }
+    .box12:hover {
+        animation: animate 3s;
+        }
+
+        footer {
+            position: absolute;
+          
+            bottom: 0;
+          
+            left: 0;
+          
+            right: 0;
+          
+            background:white;
+          
+            height: auto;
+          
+            width: 100vw;
+          
+            padding-top: 40px;
+          
+            color: #fff;
+          }
+          
+          .footer-content {
+            display: flex;
+          
+            align-items: center;
+          
+            justify-content: center;
+          
+            flex-direction: column;
+          
+            text-align: center;
+          }
+          
+          .footer-content h3 {
+            font-size: 2.1rem;
+          
+            font-weight: 500;
+          
+            text-transform: capitalize;
+          
+            line-height: 3rem;
+          }
+          
+          .footer-content p {
+            max-width: 500px;
+          
+            margin: 10px auto;
+          
+            line-height: 28px;
+          
+            font-size: 14px;
+          
+            color: #cacdd2;
+          }
+          
+          .socials {
+            list-style: none;
+          
+            display: flex;
+          
+            align-items: center;
+          
+            justify-content: center;
+          
+            margin: 1rem 0 3rem 0;
+          }
+          
+          .socials li {
+            margin: 0 10px;
+          }
+          
+          .socials a {
+            text-decoration: none;
+          
+            color:#FFFFFF;
+          
+            padding: 5px;
+          }
+          
+          .socials a i {
+            font-size: 1.1rem;
+          
+            width: 20px;
+          
+            transition: color 0.4s ease;
+          }
+          
+          .socials a:hover i {
+            color:#2E86C1;
+          }
+          
+          .footer-bottom {
+            background: #000;
+          
+            width: 100vw;
+          
+            padding: 20px;
+          
+            padding-bottom: 40px;
+          
+            text-align: center;
+          }
+          
+          .footer-bottom p {
+            float: left;
+          
+            font-size: 14px;
+          
+            word-spacing: 2px;
+          }
+          
+          .footer-bottom p a {
+            color: #ccc;
+          
+            font-size: 16px;
+          
+            text-decoration: none;
+          }
+          
+          .footer-bottom span {
+            text-transform: uppercase;
+          }
+          
+          .footer-menu {
+            float: right;
+          }
+          
+          .footer-menu ul {
+            display: flex;
+          }
+          
+          .footer-menu ul li {
+            padding-right: 10px;
+          
+            display: block;
+          }
+          
+          .footer-menu ul li a {
+            color: #cfd2d6;
+          
+            text-decoration: none;
+          }
+          
+          .footer-menu ul li a:hover {
+            color: #27bcda;
+          }
+          
+          @media (max-width: 500px) {
+            .footer-bottom p {
+              float: none;
+            }
+          
+            .footer-menu ul {
+              display: flex;
+          
+              margin-top: 10px;
+          
+              margin-bottom: 20px;
+          
+              text-align: center;
+            }
+          }
+          
+  
+</style>
+<script> 
+    var container = document.querySelector('.scrolling-container');
+    container.style.animation = 'marquee 10s linear infinite';
+
+
+
+
+
+
+</script>
+{% endblock %}

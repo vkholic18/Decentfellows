@@ -1,0 +1,71 @@
+{% extends 'home.html' %}
+{% load static %}
+
+
+{% block mymessage %}
+<br/>
+
+<div class="container">
+  {% if messages %}
+  {% for message in messages %}
+    <div class="alert alert-danger">{{ message }}</div>
+  {% endfor %}
+{% endif %}
+<div class="alert alert-info" id="update-profile-picture-alert" style="display: none">
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+  
+      <input type="file" name="profile_pic">
+    <button type="submit" class="btn btn-dark">Update</button>
+  </form>
+</div>
+               
+    <img src="{{ profile.profile_pic.url }}" class="rounded-circle" alt="Cinque Terre" width="250" height="250"> 
+    <br/>
+    <br/>
+    <button type="button" class="btn btn-dark" onclick="document.getElementById('update-profile-picture-alert').style.display = 'block'">Update Profile Picture</button>
+    <br/>
+    <br/>
+    <br/>
+    <h2>{{user.username}}</h2>
+    <br/>
+    <p>{{profile.bio}}</p> 
+</div>
+<hr>
+<!-- profile.html -->
+<br/>
+<h2> Videos Uploaded by You </h2>
+<br/>
+<hr/>
+
+
+<div class="container1">
+  {% for video in videos %}
+  <div class="video">
+    <video width="150" height="150" controls src="{{ video.video.url }}"></video>
+      <p>{{ video.caption }}</p>
+  </div>
+  {% endfor %}
+  
+</div>
+
+
+<style>
+  .container1 {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .video {
+    width: 33.33%; /* 3 columns */
+  }
+</style>
+
+
+
+
+
+
+
+
+{% endblock %}

@@ -1,0 +1,54 @@
+{% extends 'home.html' %}
+{% load static %}
+
+
+{% block mymessage %}
+
+<br/>
+<br/>
+
+<!-- login.html -->
+<style>
+    .form-control {
+        margin-bottom: 10px;
+    }
+    label {
+        font-weight: bold;
+        size:50;
+    }
+    .btn {
+        background-color: #2874A6;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        cursor: pointer;
+        width: 30%;
+        margin-bottom: 10px;
+    }
+    .btn:hover {
+        opacity: 0.8;
+    }
+</style>
+
+<form method="post">
+  {% csrf_token %}
+  <div class="form-control">
+    <label>{{ form.username.label_tag }}</label>
+    {{ form.username }}
+  </div>
+  <div class="form-control">
+    <label>{{ form.password.label_tag }}</label>
+    {{ form.password }}
+  </div>
+  <button type="submit" class="btn"><strong>Login</strong></button>
+</form>
+
+<h6> Not a member <a href ="/register">Click here</a> to Register </h6>
+
+
+
+
+
+
+
+{% endblock %}
